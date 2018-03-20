@@ -25,10 +25,10 @@ public class Controller {
 
     public void start() {
         getInput();
-        updateView();
         Simulation simulation = new Simulation(model);
-        simulation.start();
-        updateViewResults();
+        simulation.run();
+        updateView();
+        //TODO When simuation fails, also print the error message for that!
     }
 
 
@@ -36,14 +36,12 @@ public class Controller {
         System.out.println("Welcome to the RCCarSimulator! Please enter size as rows and columns:");
         model.setBoardSize(inputTwoNumbers());
         System.out.println("Enter the starting coordinates");
-        model.setStartCoordinates(inputTwoNumbers());
+        model.setCoordinates(inputTwoNumbers());
         System.out.println("Enter the starting startHeading, choose from N, S, W or E");
-        model.setStartHeading(inputHeading());
+        model.setHeading(inputHeading());
         System.out.println("Enter the sequence to simulate, choose multiple from F, B, L or R");
         model.setSimulationSequence(inputSimulationSequence());
-        System.out.println("Thanks for your configuration, starting simulation...");
-        Simulation simulation = new Simulation(model);
-        simulation.start();
+        System.out.println("Thanks for your configuration, starting simulation...\n");
     }
 
     private int[] inputTwoNumbers() {
@@ -108,12 +106,6 @@ public class Controller {
 
 
     public void updateView() {
-        view.printCarDetails(model.getBoardSize(), model.getStartCoordinates(), model.getStartHeading(), model.getSimulationSequence());
+        view.printCarDetails(model.getBoardSize(), model.getStartCoordinates(), model.getHeading(), model.getSimulationSequence());
     }
-
-    private void updateViewResults() {
-        view.printResults();
-    }
-
-
 }

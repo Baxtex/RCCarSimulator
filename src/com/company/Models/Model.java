@@ -7,9 +7,11 @@ public class Model {
     //Should contain the settings for the start.
 
     private int[] boardSize;
-    private int[] startCoordinates;
-    private char startHeading;
+    private int[] coordinates;
+    private char heading;
     private char[] simulationSequence;
+    private boolean successful;
+
 
     public int[] getBoardSize() {
         return boardSize;
@@ -20,19 +22,19 @@ public class Model {
     }
 
     public int[] getStartCoordinates() {
-        return startCoordinates;
+        return coordinates;
     }
 
-    public void setStartCoordinates(int[] startCoordinates) {
-        this.startCoordinates = startCoordinates;
+    public void setCoordinates(int[] coordinates) {
+        this.coordinates = coordinates;
     }
 
-    public char getStartHeading() {
-        return startHeading;
+    public char getHeading() {
+        return heading;
     }
 
-    public void setStartHeading(char startHeading) {
-        this.startHeading = startHeading;
+    public void setHeading(char heading) {
+        this.heading = heading;
     }
 
     public char[] getSimulationSequence() {
@@ -41,5 +43,13 @@ public class Model {
 
     public void setSimulationSequence(char[] simulationSequence) {
         this.simulationSequence = simulationSequence;
+    }
+
+    public boolean isSuccessful() {
+        return successful;
+    }
+
+    public void setSuccessful(boolean successful) {
+        this.successful = successful;
     }
 }

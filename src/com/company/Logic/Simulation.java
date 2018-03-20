@@ -17,13 +17,15 @@ public class Simulation {
     }
 
     //Logic for running the simulation
-    public void start() {
+    public void run() {
         board = createBoard(model.getBoardSize()[0], model.getBoardSize()[1]);
-        boolean successful = runSimulation(model.getStartCoordinates(), model.getStartHeading(), model.getSimulationSequence());
-        endSimulation(successful);
+        runSimulation(model.getStartCoordinates(), model.getHeading(), model.getSimulationSequence());
+        if (!model.isSuccessful()) {
+            System.out.println("Simulation failed: " + lastMoveInfo);
+        }
     }
 
-    private boolean runSimulation(int[] startCoordinates, char startHeading, char[] simulationSequence) {
+    private void runSimulation(int[] startCoordinates, char startHeading, char[] simulationSequence) {
         currentX = startCoordinates[0];
         currentY = startCoordinates[1];
         currentHeading = startHeading;
@@ -47,7 +49,14 @@ public class Simulation {
             if (!successful)
                 break;
         }
-        return successful;
+        updateModel(successful);
+    }
+
+
+    private void updateModel(boolean successful) {
+        model.setSuccessful(successful);
+        model.setCoordinates(new int[]{currentX, currentY});
+        model.setHeading(currentHeading);
     }
 
 
@@ -156,16 +165,6 @@ public class Simulation {
                 currentHeading = 'S';
                 break;
         }
-    }
-
-    //Should return a string, not print it!
-    private void endSimulation(boolean successful) {
-        if (successful) {
-            System.out.println("Simulation was successful!");
-        } else {
-            System.out.println("Simulation failed!");
-        }
-        System.out.println(lastMoveInfo);
     }
 
     private int[][] createBoard(int x, int y) {
