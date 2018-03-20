@@ -33,7 +33,7 @@ public class Controller {
 
 
     private void getInput() {
-        System.out.println("Welcome to the RCCarSimulator! Please enter size:");
+        System.out.println("Welcome to the RCCarSimulator! Please enter size as rows and columns:");
         model.setBoardSize(inputTwoNumbers());
         System.out.println("Enter the starting coordinates");
         model.setStartCoordinates(inputTwoNumbers());
@@ -41,7 +41,9 @@ public class Controller {
         model.setStartHeading(inputHeading());
         System.out.println("Enter the sequence to simulate, choose multiple from F, B, L or R");
         model.setSimulationSequence(inputSimulationSequence());
-        System.out.println("Thanks for your configuration. Starting simulation...");
+        System.out.println("Thanks for your configuration, starting simulation...");
+        Simulation simulation = new Simulation(model);
+        simulation.start();
     }
 
     private int[] inputTwoNumbers() {
@@ -50,14 +52,14 @@ public class Controller {
             String inputConsoleString = scanInput.nextLine();
             String[] parts = inputConsoleString.split(" ");
             if (parts.length < 2 || parts.length > 2) {
-                System.out.println("Try again, make sure you only input 2 integers that is space separated.");
+                System.out.println("Try again, make sure you only input 2 integers that are space separated.");
                 continue;
             }
             try {
                 x = Integer.parseInt(parts[0]);
                 y = Integer.parseInt(parts[1]);
             } catch (NumberFormatException e) {
-                System.out.println("Try again, That is not a number. ");
+                System.out.println("Try again, that is not a number. ");
                 continue;
             }
             return new int[]{x, y};

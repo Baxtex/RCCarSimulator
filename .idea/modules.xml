@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RCCarSimulator.iml" filepath="$PROJECT_DIR$/RCCarSimulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/RCCarSimulator.iml" filepath="$PROJECT_DIR$/.idea/RCCarSimulator.iml" />
     </modules>
   </component>
 </project>
