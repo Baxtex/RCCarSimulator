@@ -1,6 +1,6 @@
 package com.company.Tests;
 
-import com.company.Controllers.Input;
+import com.company.Utilities.Input;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;

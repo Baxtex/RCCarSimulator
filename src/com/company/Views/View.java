@@ -17,10 +17,6 @@ public class View {
         System.out.println("---");
     }
 
-    public void printResults() {
-        // printCarDetails();
-    }
-
     public void printSuccessful(int[] coordinates, char heading) {
         System.out.println("Success!");
         System.out.println("Current position: " + coordinates[0] + ", " + coordinates[1]);

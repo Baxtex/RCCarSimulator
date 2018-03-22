@@ -2,6 +2,7 @@ package com.company.Controllers;
 
 import com.company.Logic.Simulation;
 import com.company.Models.SimulationModel;
+import com.company.Utilities.Input;
 import com.company.Views.View;
 
 public class Controller {
@@ -46,13 +47,12 @@ public class Controller {
         System.out.println("Thanks for your configuration, starting simulation...\n");
     }
 
-
-    public void updateView() {
-        view.printCarDetails(simulationModel.getBoardSize(), simulationModel.getStartCoordinates(), simulationModel.getHeading(), simulationModel.getSimulationSequence());
+    private void updateView() {
+        view.printCarDetails(simulationModel.getBoardSize(), simulationModel.getCoordinates(), simulationModel.getHeading(), simulationModel.getSimulationSequence());
     }
 
     private void updateSuccessfulView() {
-        view.printSuccessful(simulationModel.getStartCoordinates(), simulationModel.getHeading());
+        view.printSuccessful(simulationModel.getCoordinates(), simulationModel.getHeading());
     }
 
     private void updateErrorView() {

@@ -1,4 +1,4 @@
-package com.company.Controllers;
+package com.company.Utilities;
 
 import java.util.Scanner;
 

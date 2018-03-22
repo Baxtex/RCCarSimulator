@@ -19,7 +19,7 @@ public class Simulation {
     //Logic for running the simulation
     public void run() {
         board = createBoard(simulationModel.getBoardSize()[0], simulationModel.getBoardSize()[1]);
-        runSimulation(simulationModel.getStartCoordinates(), simulationModel.getHeading(), simulationModel.getSimulationSequence());
+        runSimulation(simulationModel.getCoordinates(), simulationModel.getHeading(), simulationModel.getSimulationSequence());
 
     }
 

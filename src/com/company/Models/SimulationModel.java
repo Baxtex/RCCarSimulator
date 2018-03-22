@@ -13,9 +13,7 @@ public class SimulationModel {
     private boolean successful;
     private String lastMoveInfo = "";
 
-    public int[] getCoordinates() {
-        return coordinates;
-    }
+
 
     public String getLastMoveInfo() {
         return lastMoveInfo;
@@ -33,9 +31,7 @@ public class SimulationModel {
         this.boardSize = boardSize;
     }
 
-    public int[] getStartCoordinates() {
-        return coordinates;
-    }
+    public int[] getCoordinates() { return coordinates; }
 
     public void setCoordinates(int[] coordinates) {
         this.coordinates = coordinates;
