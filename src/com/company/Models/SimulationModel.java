@@ -4,24 +4,15 @@ package com.company.Models;
  * SimulationModel that is a start of the simulation.
  */
 public class SimulationModel {
-    //Should contain the settings for the start.
-
-    private int[] boardSize;
-    private int[] coordinates;
+    private int[] boardSize, coordinates;
     private char heading;
     private char[] simulationSequence;
     private boolean successful;
     private String lastMoveInfo = "";
 
+    public String getLastMoveInfo() { return lastMoveInfo; }
 
-
-    public String getLastMoveInfo() {
-        return lastMoveInfo;
-    }
-
-    public void setLastMoveInfo(String lastMoveInfo) {
-        this.lastMoveInfo = lastMoveInfo;
-    }
+    public void setLastMoveInfo(String lastMoveInfo) { this.lastMoveInfo = lastMoveInfo; }
 
     public int[] getBoardSize() {
         return boardSize;

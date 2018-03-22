@@ -20,8 +20,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="14" selection-end-column="27" />
+            <state relative-caret-position="189">
+              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -30,18 +30,21 @@
       <file leaf-file-name="Simulation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Logic/Simulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="54" column="37" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="-254">
+              <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+              <folding>
+                <element signature="e#323#324#0" expanded="true" />
+                <element signature="e#377#378#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimulationTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimulationTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Tests/SimulationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state relative-caret-position="1485">
+              <caret line="94" column="56" lean-forward="true" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,16 +52,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Input.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Utilities/Input.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataWrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Utilities/DataWrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SimulationModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Models/SimulationModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="215">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
-                <element signature="e#406#407#0" expanded="true" />
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-                <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#799#800#0" expanded="true" />
+                <element signature="e#829#830#0" expanded="true" />
+                <element signature="e#956#957#0" expanded="true" />
+                <element signature="e#997#998#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,34 +91,24 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Controllers/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="330">
+              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
               <folding>
-                <element signature="e#2026#2027#0" expanded="true" />
-                <element signature="e#2092#2093#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2088#2089#0" expanded="true" />
+                <element signature="e#2154#2155#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InputTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Tests/InputTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Assertions.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.0/junit-jupiter-api-5.0.0.jar!/org/junit/jupiter/api/Assertions.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="226" column="23" lean-forward="false" selection-start-line="226" selection-start-column="23" selection-end-line="226" selection-end-column="23" />
+            <state relative-caret-position="592">
+              <caret line="272" column="0" lean-forward="true" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
               <folding>
-                <element signature="e#7907#7908#0" expanded="true" />
-                <element signature="e#7966#7967#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,8 +117,8 @@
       <file leaf-file-name="ReflectionUtils.class" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.m2/repository/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="76" column="39" lean-forward="false" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
+            <state relative-caret-position="199">
+              <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,8 +127,8 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Views/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="482">
+              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -125,8 +139,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -137,13 +151,15 @@
         <option value="$PROJECT_DIR$/src/com/company/Tests/ControllerTest.java" />
         <option value="$PROJECT_DIR$/src/com/company/Controllers/Input.java" />
         <option value="$PROJECT_DIR$/src/com/company/Views/View.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Models/SimulationModel.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Controllers/Controller.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Utilities/Input.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Logic/Simulation.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tests/InputTests.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Tests/InputTest.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Models/SimulationModel.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Logic/Simulation.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tests/SimulationTest.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Controllers/Controller.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Utilities/StartData.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Utilities/DataWrapper.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Utilities/Input.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Tests/InputTest.java" />
       </list>
     </option>
   </component>
@@ -269,7 +285,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SimulationTest.runSimulationInvalid1">
+  <component name="RunManager" selected="JUnit.InputTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -322,13 +338,13 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="InputTest.inputSimulationSequenceInvalidInput1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputTest.inputTwoNumbersBoardAndHeadingInvalid6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RCCarSimulator" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.company.Tests" />
       <option name="MAIN_CLASS_NAME" value="com.company.Tests.InputTest" />
-      <option name="METHOD_NAME" value="inputSimulationSequenceInvalidInput1" />
+      <option name="METHOD_NAME" value="inputTwoNumbersBoardAndHeadingInvalid6" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -341,13 +357,13 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="InputTest.inputSimulationSequenceInvalidInput2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputTest.inputTwoNumbersInvalidInput7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RCCarSimulator" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.company.Tests" />
       <option name="MAIN_CLASS_NAME" value="com.company.Tests.InputTest" />
-      <option name="METHOD_NAME" value="inputSimulationSequenceInvalidInput2" />
+      <option name="METHOD_NAME" value="inputTwoNumbersInvalidInput7" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -360,13 +376,13 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SimulationTest.inputTwoNumbersValidInput1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputTest.inputTwoNumbersInvalidInput8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RCCarSimulator" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.company.Tests" />
-      <option name="MAIN_CLASS_NAME" value="com.company.Tests.SimulationTest" />
-      <option name="METHOD_NAME" value="inputTwoNumbersValidInput1" />
+      <option name="MAIN_CLASS_NAME" value="com.company.Tests.InputTest" />
+      <option name="METHOD_NAME" value="inputTwoNumbersInvalidInput8" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -379,13 +395,13 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SimulationTest.runSimulationInvalid1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputTest.inputTwoNumbersInvalidInput9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RCCarSimulator" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.company.Tests" />
-      <option name="MAIN_CLASS_NAME" value="com.company.Tests.SimulationTest" />
-      <option name="METHOD_NAME" value="runSimulationInvalid1" />
+      <option name="MAIN_CLASS_NAME" value="com.company.Tests.InputTest" />
+      <option name="METHOD_NAME" value="inputTwoNumbersInvalidInput9" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -435,19 +451,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.InputTest.inputSimulationSequenceInvalidInput1" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.InputTests" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.InputTest.inputSimulationSequenceInvalidInput2" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SimulationTest.inputTwoNumbersValidInput1" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.SimulationTest.runSimulationInvalid1" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersBoardAndHeadingInvalid6" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersInvalidInput7" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersInvalidInput8" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersInvalidInput9" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.InputTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SimulationTest.runSimulationInvalid1" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SimulationTest.inputTwoNumbersValidInput1" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.InputTests" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.InputTest.inputSimulationSequenceInvalidInput2" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.InputTest.inputSimulationSequenceInvalidInput1" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.InputTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersInvalidInput9" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersInvalidInput8" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersInvalidInput7" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.InputTest.inputTwoNumbersBoardAndHeadingInvalid6" />
       </list>
     </recent_temporary>
   </component>
@@ -455,35 +471,35 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="InputTest - 2018.03.22 at 19h 33m 00s.xml">
+    <history-entry file="InputTest - 2018.03.22 at 21h 57m 55s.xml">
       <configuration name="InputTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InputTest_inputSimulationSequenceInvalidInput1 - 2018.03.22 at 19h 32m 45s.xml">
-      <configuration name="InputTest.inputSimulationSequenceInvalidInput1" configurationId="JUnit" />
+    <history-entry file="InputTest - 2018.03.22 at 22h 02m 57s.xml">
+      <configuration name="InputTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InputTest_inputSimulationSequenceInvalidInput2 - 2018.03.22 at 19h 33m 24s.xml">
-      <configuration name="InputTest.inputSimulationSequenceInvalidInput2" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersBoardAndHeadingInvalid4 - 2018.03.22 at 21h 56m 43s.xml">
+      <configuration name="InputTest.inputTwoNumbersBoardAndHeadingInvalid4" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InputTest_inputSimulationSequenceInvalidInput2 - 2018.03.22 at 19h 40m 45s.xml">
-      <configuration name="InputTest.inputSimulationSequenceInvalidInput2" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersBoardAndHeadingInvalid5 - 2018.03.22 at 21h 59m 25s.xml">
+      <configuration name="InputTest.inputTwoNumbersBoardAndHeadingInvalid5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InputTest_inputSimulationSequenceValidInput2 - 2018.03.22 at 19h 29m 52s.xml">
-      <configuration name="InputTest.inputSimulationSequenceValidInput2" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersBoardAndHeadingInvalid6 - 2018.03.22 at 21h 59m 54s.xml">
+      <configuration name="InputTest.inputTwoNumbersBoardAndHeadingInvalid6" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InputTest_inputSimulationSequenceValidInput2 - 2018.03.22 at 19h 30m 19s.xml">
-      <configuration name="InputTest.inputSimulationSequenceValidInput2" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersBoardAndHeadingValid6 - 2018.03.22 at 21h 58m 51s.xml">
+      <configuration name="InputTest.inputTwoNumbersBoardAndHeadingValid6" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InputTests - 2018.03.22 at 19h 43m 50s.xml">
-      <configuration name="InputTests" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersInvalidInput7 - 2018.03.22 at 22h 00m 33s.xml">
+      <configuration name="InputTest.inputTwoNumbersInvalidInput7" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulationTest_inputTwoNumbersValidInput1 - 2018.03.22 at 19h 53m 02s.xml">
-      <configuration name="SimulationTest.inputTwoNumbersValidInput1" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersInvalidInput8 - 2018.03.22 at 22h 01m 05s.xml">
+      <configuration name="InputTest.inputTwoNumbersInvalidInput8" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulationTest_inputTwoNumbersValidInput1 - 2018.03.22 at 19h 53m 30s.xml">
-      <configuration name="SimulationTest.inputTwoNumbersValidInput1" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersInvalidInput8 - 2018.03.22 at 22h 02m 08s.xml">
+      <configuration name="InputTest.inputTwoNumbersInvalidInput8" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulationTest_runSimulationInvalid1 - 2018.03.22 at 19h 55m 00s.xml">
-      <configuration name="SimulationTest.runSimulationInvalid1" configurationId="JUnit" />
+    <history-entry file="InputTest_inputTwoNumbersInvalidInput9 - 2018.03.22 at 22h 02m 29s.xml">
+      <configuration name="InputTest.inputTwoNumbersInvalidInput9" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -494,12 +510,12 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17395833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12118019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32395834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -518,13 +534,25 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Utilities/Input.java</url>
-          <line>10</line>
+          <url>file://$PROJECT_DIR$/src/com/company/Logic/Simulation.java</url>
+          <line>79</line>
           <properties />
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Tests/SimulationTest.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Logic/Simulation.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -542,10 +570,11 @@
         <state relative-caret-position="210">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -554,7 +583,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2640">
           <caret line="178" column="1" lean-forward="false" selection-start-line="178" selection-start-column="1" selection-end-line="178" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -571,8 +603,9 @@
         <state relative-caret-position="60">
           <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="23" />
           <folding>
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -589,7 +622,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -598,10 +634,11 @@
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,8 +656,9 @@
         <state relative-caret-position="390">
           <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
           <folding>
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -638,10 +676,11 @@
         <state relative-caret-position="150">
           <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,7 +689,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -667,8 +709,9 @@
         <state relative-caret-position="420">
           <caret line="32" column="75" lean-forward="false" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
           <folding>
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,22 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="76" column="39" lean-forward="false" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -724,66 +751,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Views/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="482">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Models/SimulationModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="215">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Utilities/Input.java">
+    <entry file="jar://$USER_HOME$/.m2/repository/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Controllers/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2092#2093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tests/InputTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        <state relative-caret-position="199">
+          <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Logic/Simulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="54" column="37" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="37" />
+        <state relative-caret-position="-254">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding>
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Controllers/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Utilities/DataWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Tests/SimulationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="1485">
+          <caret line="94" column="56" lean-forward="true" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Utilities/Input.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tests/InputTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="272" column="0" lean-forward="true" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -3,20 +3,17 @@ package com.company.Controllers;
 import com.company.Logic.Simulation;
 import com.company.Models.SimulationModel;
 import com.company.Utilities.Input;
+import com.company.Utilities.DataWrapper;
 import com.company.Views.View;
 
 public class Controller {
 
-
     private final View view;
-    private final SimulationModel simulationModel;
     private final Input input = new Input();
+    private final SimulationModel simulationModel;
 
     /**
      * Constructor that setups objects.
-     *
-     * @param view
-     * @param simulationModel
      */
     public Controller(View view, SimulationModel simulationModel) {
         this.view = view;
@@ -37,11 +34,12 @@ public class Controller {
 
     private void getInput() {
         System.out.println("Welcome to the RCCarSimulator! Please enter size as rows and columns:");
-        simulationModel.setBoardSize(input.inputTwoNumbers());
-        System.out.println("Enter the starting coordinates");
-        simulationModel.setCoordinates(input.inputTwoNumbers());
-        System.out.println("Enter the starting startHeading, choose from N, S, W or E");
-        simulationModel.setHeading(input.inputHeading());
+        simulationModel.setBoardSize(input.inputTwoNumbersBoard());
+        System.out.println("Enter the starting coordinates and startHeading, choose from N, S, W or E");
+        //simulationModel.setCoordinates(input.inputTwoNumbersBoard());
+        DataWrapper sd = input.inputTwoNumbersBoardAndHeading();
+        simulationModel.setCoordinates(sd.coordinates);
+        simulationModel.setHeading(sd.heading);
         System.out.println("Enter the sequence to simulate, choose multiple from F, B, L or R");
         simulationModel.setSimulationSequence(input.inputSimulationSequence());
         System.out.println("Thanks for your configuration, starting simulation...\n");

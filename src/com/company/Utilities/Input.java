@@ -6,7 +6,7 @@ public class Input {
 
     private final Scanner scanInput = new Scanner(System.in);
 
-    public int[] inputTwoNumbers() {
+    public int[] inputTwoNumbersBoard() {
         int x, y;
         while (true) {
             String inputConsoleString = scanInput.nextLine();
@@ -23,7 +23,7 @@ public class Input {
                 continue;
             }
 
-            if (x < 0 || y < 0) {
+            if (x < 1 || y < 1) {
                 System.out.println("Try again, number is to small.");
                 continue;
             }
@@ -32,20 +32,36 @@ public class Input {
         }
     }
 
-    public char inputHeading() {
+    public DataWrapper inputTwoNumbersBoardAndHeading() {
+        int x, y;
+        char h;
         while (true) {
             String inputConsoleString = scanInput.nextLine();
-            if (inputConsoleString.length() > 1) {
-                System.out.println("Try again, too many characters");
+            String[] parts = inputConsoleString.split(" ");
+            if (parts.length < 3 || parts.length > 3) {
+                System.out.println("Try again, make sure you only input 2 integers and one character that are space separated.");
+                continue;
+            }
+            try {
+                x = Integer.parseInt(parts[0]);
+                y = Integer.parseInt(parts[1]);
+                h = parts[2].charAt(0);
+            } catch (NumberFormatException e) {
+                System.out.println("Try again, that is not valid input");
+                continue;
+            }
+            if (x < 0 || y < 0) {
+                System.out.println("Try again, number is to small.");
                 continue;
             }
 
-            char c = inputConsoleString.charAt(0);
-            if (c == 'N' || c == 'S' || c == 'W' || c == 'E') {
-                return c;
+            if (h == 'N' || h == 'S' || h == 'W' || h == 'E') {
+                break;
+            } else {
+                System.out.println("Try again, heading is incorrect.");
             }
-            System.out.println("Try again, unknown direction, did you use valid uppercase characters?");
         }
+        return new DataWrapper(new int[]{x, y}, h);
     }
 
     public char[] inputSimulationSequence() {

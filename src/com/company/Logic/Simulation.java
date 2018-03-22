@@ -1,32 +1,28 @@
 package com.company.Logic;
 
-
 import com.company.Models.SimulationModel;
-
 
 public class Simulation {
 
     private final SimulationModel simulationModel;
     private int[][] board;
-    private int currentX, currentY;
-    private char currentHeading = 0;
-    private String lastMoveInfo = "";
+    private int x, y;
+    private char heading = 0;
+    private String errorMessage = "";
 
     public Simulation(SimulationModel simulationModel) {
         this.simulationModel = simulationModel;
     }
 
-    //Logic for running the simulation
     public void run() {
         board = createBoard(simulationModel.getBoardSize()[0], simulationModel.getBoardSize()[1]);
         runSimulation(simulationModel.getCoordinates(), simulationModel.getHeading(), simulationModel.getSimulationSequence());
-
     }
 
     private void runSimulation(int[] startCoordinates, char startHeading, char[] simulationSequence) {
-        currentX = startCoordinates[0];
-        currentY = startCoordinates[1];
-        currentHeading = startHeading;
+        x = startCoordinates[0];
+        y = startCoordinates[1];
+        heading = startHeading;
         boolean successful = true;
 
         for (char step : simulationSequence) {
@@ -50,44 +46,41 @@ public class Simulation {
         updateModel(successful);
     }
 
-
     private void updateModel(boolean successful) {
         simulationModel.setSuccessful(successful);
-        simulationModel.setCoordinates(new int[]{currentX, currentY});
-        simulationModel.setHeading(currentHeading);
-        simulationModel.setLastMoveInfo(lastMoveInfo);
+        simulationModel.setCoordinates(new int[]{x, y});
+        simulationModel.setHeading(heading);
+        simulationModel.setLastMoveInfo(errorMessage);
     }
-
 
     private boolean moveForward() {
         boolean successful = true;
-        switch (currentHeading) {
+        switch (heading) {
             case 'N':
-                currentX--;
-                if (currentX < 0) {
-                    lastMoveInfo = "Can't go North.";
+                x--;
+                if (x < 0) {
+                    errorMessage = "Can't go North.";
                     successful = false;
                 }
                 break;
             case 'S':
-                currentX++;
-                if (currentX > board.length) {
-                    lastMoveInfo = "Can't go South.";
+                x++;
+                if (x > board.length) {
+                    errorMessage = "Can't go South.";
                     successful = false;
                 }
                 break;
             case 'W':
-                currentY--;
-                if (currentY < 0) {
-                    lastMoveInfo = "Can't go West.";
+                y--;
+                if (y < 0) {
+                    errorMessage = "Can't go West.";
                     successful = false;
                 }
                 break;
             case 'E':
-                currentY++;
-
-                if (currentY > board[currentX].length) {
-                    lastMoveInfo = "Can't go East.";
+                y++;
+                    if (y > board[x].length) {
+                    errorMessage = "Can't go East.";
                     successful = false;
                 }
                 break;
@@ -97,33 +90,33 @@ public class Simulation {
 
     private boolean moveBackwards() {
         boolean successful = true;
-        switch (currentHeading) {
+        switch (heading) {
             case 'N':
-                currentX++;
-                if (currentX > board.length) {
-                    lastMoveInfo = "Can't go South.";
+                x++;
+                if (x > board.length) {
+                    errorMessage = "Can't go South.";
                     successful = false;
                 }
                 break;
             case 'S':
-                currentX--;
-                if (currentX < 0) {
-                    lastMoveInfo = "Can't go North.";
+                x--;
+                if (x < 0) {
+                    errorMessage = "Can't go North.";
                     successful = false;
                 }
                 break;
             case 'W':
-                currentY++;
+                y++;
 
-                if (currentY > board[currentX].length) {
-                    lastMoveInfo = "Can't go East.";
+                if (y > board[x].length) {
+                    errorMessage = "Can't go East.";
                     successful = false;
                 }
                 break;
             case 'E':
-                currentY--;
-                if (currentY < 0) {
-                    lastMoveInfo = "Can't go West.";
+                y--;
+                if (y < 0) {
+                    errorMessage = "Can't go West.";
                     successful = false;
                 }
                 break;
@@ -131,37 +124,36 @@ public class Simulation {
         return successful;
     }
 
-
     private void rotateLeft() {
-        switch (currentHeading) {
+        switch (heading) {
             case 'N':
-                currentHeading = 'W';
+                heading = 'W';
                 break;
             case 'S':
-                currentHeading = 'E';
+                heading = 'E';
                 break;
             case 'W':
-                currentHeading = 'S';
+                heading = 'S';
                 break;
             case 'E':
-                currentHeading = 'N';
+                heading = 'N';
                 break;
         }
     }
 
     private void rotateRight() {
-        switch (currentHeading) {
+        switch (heading) {
             case 'N':
-                currentHeading = 'E';
+                heading = 'E';
                 break;
             case 'S':
-                currentHeading = 'W';
+                heading = 'W';
                 break;
             case 'W':
-                currentHeading = 'N';
+                heading = 'N';
                 break;
             case 'E':
-                currentHeading = 'S';
+                heading = 'S';
                 break;
         }
     }
