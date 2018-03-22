@@ -20,4 +20,15 @@ public class View {
     public void printResults() {
         // printCarDetails();
     }
+
+    public void printSuccessful(int[] coordinates, char heading) {
+        System.out.println("Success!");
+        System.out.println("Current position: " + coordinates[0] + ", " + coordinates[1]);
+        System.out.println("Current heading " + heading);
+    }
+
+    public void printError(String lastMoveInfo) {
+        System.out.println("Failure!");
+        System.out.println("Error message: " + lastMoveInfo);
+    }
 }

@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.Controllers.Controller;
-import com.company.Models.Model;
+import com.company.Models.SimulationModel;
 import com.company.Views.View;
 
 /**
@@ -10,8 +10,8 @@ import com.company.Views.View;
 public class Main {
     public static void main(String[] args) {
         View view = new View();
-        Model model = new Model();
-        Controller controller = new Controller(view, model);
+        SimulationModel simulationModel = new SimulationModel();
+        Controller controller = new Controller(view, simulationModel);
         controller.start();
     }
 }

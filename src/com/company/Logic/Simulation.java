@@ -1,28 +1,26 @@
 package com.company.Logic;
 
 
-import com.company.Models.Model;
+import com.company.Models.SimulationModel;
 
 
 public class Simulation {
 
-    private final Model model;
+    private final SimulationModel simulationModel;
     private int[][] board;
     private int currentX, currentY;
     private char currentHeading = 0;
     private String lastMoveInfo = "";
 
-    public Simulation(Model model) {
-        this.model = model;
+    public Simulation(SimulationModel simulationModel) {
+        this.simulationModel = simulationModel;
     }
 
     //Logic for running the simulation
     public void run() {
-        board = createBoard(model.getBoardSize()[0], model.getBoardSize()[1]);
-        runSimulation(model.getStartCoordinates(), model.getHeading(), model.getSimulationSequence());
-        if (!model.isSuccessful()) {
-            System.out.println("Simulation failed: " + lastMoveInfo);
-        }
+        board = createBoard(simulationModel.getBoardSize()[0], simulationModel.getBoardSize()[1]);
+        runSimulation(simulationModel.getStartCoordinates(), simulationModel.getHeading(), simulationModel.getSimulationSequence());
+
     }
 
     private void runSimulation(int[] startCoordinates, char startHeading, char[] simulationSequence) {
@@ -54,9 +52,10 @@ public class Simulation {
 
 
     private void updateModel(boolean successful) {
-        model.setSuccessful(successful);
-        model.setCoordinates(new int[]{currentX, currentY});
-        model.setHeading(currentHeading);
+        simulationModel.setSuccessful(successful);
+        simulationModel.setCoordinates(new int[]{currentX, currentY});
+        simulationModel.setHeading(currentHeading);
+        simulationModel.setLastMoveInfo(lastMoveInfo);
     }
 
 
