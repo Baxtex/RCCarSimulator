@@ -1,105 +1,127 @@
 package com.company.Tests;
 
 import com.company.Logic.Simulation;
-import com.company.Models.SimulationModel;
+import com.company.Models.CarSimulationModel;
+import com.company.Shared.Heading;
+import com.company.Shared.Move;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests for the simulation.
+ */
 class SimulationTest {
 
     @Test
     void runSimulationValid1() {
-        SimulationModel simulationModel = new SimulationModel();
-        simulationModel.setBoardSize(new int[]{0, 0});
-        simulationModel.setCoordinates(new int[]{0, 0});
-        simulationModel.setHeading('S');
-        simulationModel.setSimulationSequence(new char[]{'L', 'R', 'L', 'R', 'R', 'L'});
+        CarSimulationModel carSimulationModel = new CarSimulationModel();
+        carSimulationModel.setBoardSize(new int[]{1, 1});
+        carSimulationModel.setCoordinates(new int[]{0, 0});
+        carSimulationModel.setHeading(Heading.SOUTH);
+        carSimulationModel.setMoveSequence(new Move[]{Move.ROTATE_LEFT, Move.ROTATE_RIGHT, Move.ROTATE_LEFT, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT, Move.ROTATE_LEFT});
+        Simulation simulation = new Simulation();
+        simulation.run(carSimulationModel);
 
-        Simulation simulation = new Simulation(simulationModel);
-        simulation.run();
-
-        boolean actual = simulationModel.isSuccessful();
+        boolean actual = carSimulationModel.isSuccessful();
         boolean expected = true;
         assertEquals(expected, actual);
     }
 
     @Test
     void runSimulationValid2() {
-        SimulationModel simulationModel = new SimulationModel();
-        simulationModel.setBoardSize(new int[]{100, 100});
-        simulationModel.setCoordinates(new int[]{0, 0});
-        simulationModel.setHeading('S');
-        simulationModel.setSimulationSequence(new char[]{'F', 'F', 'F', 'F', 'R', 'R', 'F', 'R', 'F', 'F', 'F', 'R', 'F', 'B', 'L', 'F', 'F', 'F', 'F'});
+        CarSimulationModel carSimulationModel = new CarSimulationModel();
+        carSimulationModel.setBoardSize(new int[]{100, 100});
+        carSimulationModel.setCoordinates(new int[]{0, 0});
+        carSimulationModel.setHeading(Heading.SOUTH);
+        carSimulationModel.setMoveSequence(new Move[]{Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT,
+                Move.FORWARD, Move.ROTATE_RIGHT, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.ROTATE_RIGHT, Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT,
+                Move.FORWARD, Move.FORWARD, Move.FORWARD});
+        Simulation simulation = new Simulation();
+        simulation.run(carSimulationModel);
 
-        Simulation simulation = new Simulation(simulationModel);
-        simulation.run();
-
-        boolean actual = simulationModel.isSuccessful();
+        boolean actual = carSimulationModel.isSuccessful();
         boolean expected = true;
         assertEquals(expected, actual);
     }
 
     @Test
     void runSimulationValid3() {
-        SimulationModel simulationModel = new SimulationModel();
-        simulationModel.setBoardSize(new int[]{10000, 10000});
-        simulationModel.setCoordinates(new int[]{0, 0});
-        simulationModel.setHeading('S');
-        simulationModel.setSimulationSequence(new char[]{'F', 'F', 'F', 'F', 'R', 'R', 'F', 'R', 'F', 'F', 'F', 'R', 'F', 'B', 'L', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F'});
+        CarSimulationModel carSimulationModel = new CarSimulationModel();
+        carSimulationModel.setBoardSize(new int[]{10000, 10000});
+        carSimulationModel.setCoordinates(new int[]{0, 0});
+        carSimulationModel.setHeading(Heading.SOUTH);
+        carSimulationModel.setMoveSequence(new Move[]{Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT, Move.FORWARD,
+                Move.ROTATE_RIGHT, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.ROTATE_RIGHT, Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.FORWARD, Move.FORWARD,
+                Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD,
+                Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD
+        });
+        Simulation simulation = new Simulation();
+        simulation.run(carSimulationModel);
 
-        Simulation simulation = new Simulation(simulationModel);
-        simulation.run();
+        boolean actual = carSimulationModel.isSuccessful();
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
 
-        boolean actual = simulationModel.isSuccessful();
+    @Test
+    void runSimulationValid4() {
+        CarSimulationModel carSimulationModel = new CarSimulationModel();
+        carSimulationModel.setBoardSize(new int[]{100, 100});
+        carSimulationModel.setCoordinates(new int[]{50, 50});
+        carSimulationModel.setHeading(Heading.SOUTH);
+        carSimulationModel.setMoveSequence(new Move[]{Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT,
+                Move.FORWARD, Move.ROTATE_RIGHT, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.ROTATE_RIGHT, Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT,
+                Move.FORWARD, Move.FORWARD, Move.FORWARD});
+        Simulation simulation = new Simulation();
+        simulation.run(carSimulationModel);
+
+        boolean actual = carSimulationModel.isSuccessful();
         boolean expected = true;
         assertEquals(expected, actual);
     }
 
     @Test
     void runSimulationInvalid1() {
-        SimulationModel simulationModel = new SimulationModel();
-        simulationModel.setBoardSize(new int[]{0, 0});
-        simulationModel.setCoordinates(new int[]{0, 0});
-        simulationModel.setHeading('N');
-        simulationModel.setSimulationSequence(new char[]{'F', 'B', 'L', 'R'});
+        CarSimulationModel carSimulationModel = new CarSimulationModel();
+        carSimulationModel.setBoardSize(new int[]{0, 0});
+        carSimulationModel.setCoordinates(new int[]{0, 0});
+        carSimulationModel.setHeading(Heading.NORTH);
+        carSimulationModel.setMoveSequence(new Move[]{Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.ROTATE_RIGHT});
+        Simulation simulation = new Simulation();
+        simulation.run(carSimulationModel);
 
-        Simulation simulation = new Simulation(simulationModel);
-        simulation.run();
-
-        boolean actual = simulationModel.isSuccessful();
+        boolean actual = carSimulationModel.isSuccessful();
         boolean expected = false;
         assertEquals(expected, actual);
     }
 
     @Test
     void runSimulationInvalid2() {
-        SimulationModel simulationModel = new SimulationModel();
-        simulationModel.setBoardSize(new int[]{5, 1});
-        simulationModel.setCoordinates(new int[]{0, 0});
-        simulationModel.setHeading('S');
-        simulationModel.setSimulationSequence(new char[]{'F', 'F', 'F', 'F', 'F', 'F'});
+        CarSimulationModel carSimulationModel = new CarSimulationModel();
+        carSimulationModel.setBoardSize(new int[]{5, 1});
+        carSimulationModel.setCoordinates(new int[]{0, 0});
+        carSimulationModel.setHeading(Heading.SOUTH);
+        carSimulationModel.setMoveSequence(new Move[]{Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD});
+        Simulation simulation = new Simulation();
+        simulation.run(carSimulationModel);
 
-        Simulation simulation = new Simulation(simulationModel);
-        simulation.run();
-
-        boolean actual = simulationModel.isSuccessful();
+        boolean actual = carSimulationModel.isSuccessful();
         boolean expected = false;
         assertEquals(expected, actual);
     }
 
     @Test
     void runSimulationInvalid3() {
-        SimulationModel simulationModel = new SimulationModel();
-        simulationModel.setBoardSize(new int[]{1, 1});
-        simulationModel.setCoordinates(new int[]{0, 0});
-        simulationModel.setHeading('S');
-        simulationModel.setSimulationSequence(new char[]{'L', 'F', 'F', 'F', 'F', 'F', 'F'});
+        CarSimulationModel carSimulationModel = new CarSimulationModel();
+        carSimulationModel.setBoardSize(new int[]{1, 1});
+        carSimulationModel.setCoordinates(new int[]{0, 0});
+        carSimulationModel.setHeading(Heading.SOUTH);
+        carSimulationModel.setMoveSequence(new Move[]{Move.ROTATE_LEFT, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.FORWARD});
+        Simulation simulation = new Simulation();
+        simulation.run(carSimulationModel);
 
-        Simulation simulation = new Simulation(simulationModel);
-        simulation.run();
-
-        boolean actual = simulationModel.isSuccessful();
+        boolean actual = carSimulationModel.isSuccessful();
         boolean expected = false;
         assertEquals(expected, actual);
     }

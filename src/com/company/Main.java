@@ -1,17 +1,15 @@
 package com.company;
 
 import com.company.Controllers.Controller;
-import com.company.Models.SimulationModel;
-import com.company.Views.View;
+import com.company.Views.CarSimulationView;
 
 /**
- * Class that starts this application
+ * Main entry point for this application. Starts
  */
 public class Main {
     public static void main(String[] args) {
-        View view = new View();
-        SimulationModel simulationModel = new SimulationModel();
-        Controller controller = new Controller(view, simulationModel);
+        CarSimulationView simulationModelView = new CarSimulationView();
+        Controller controller = new Controller(simulationModelView);
         controller.start();
     }
 }

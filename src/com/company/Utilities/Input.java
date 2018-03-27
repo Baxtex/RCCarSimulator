@@ -1,12 +1,24 @@
 package com.company.Utilities;
 
+import com.company.Shared.DataWrapper;
+import com.company.Shared.Heading;
+import com.company.Shared.Move;
+
 import java.util.Scanner;
 
+/**
+ * Class responsible for receiving user input from the console and returning parsed values.
+ */
 public class Input {
 
     private final Scanner scanInput = new Scanner(System.in);
 
-    public int[] inputTwoNumbersBoard() {
+    /**
+     * Reads the console for the number of rows and columns the board should have. Loops until valid input is received.
+     *
+     * @return - int array of the size that is bigger than 1,1.
+     */
+    public int[] inputBoardSize() {
         int x, y;
         while (true) {
             String inputConsoleString = scanInput.nextLine();
@@ -32,7 +44,12 @@ public class Input {
         }
     }
 
-    public DataWrapper inputTwoNumbersBoardAndHeading() {
+    /**
+     * Reads the console for input for the starting position and the starting heading. Loops until valid input is received.
+     *
+     * @return - A wrapped object containing the starting position as ints and the start heading as Heading enum.
+     */
+    public DataWrapper inputStartPosition() {
         int x, y;
         char h;
         while (true) {
@@ -55,32 +72,60 @@ public class Input {
                 continue;
             }
 
-            if (h == 'N' || h == 'S' || h == 'W' || h == 'E') {
-                break;
-            } else {
-                System.out.println("Try again, heading is incorrect.");
+            switch (h) {
+                case 'N':
+                    return new DataWrapper(new int[]{x, y}, Heading.NORTH);
+                case 'S':
+                    return new DataWrapper(new int[]{x, y}, Heading.SOUTH);
+                case 'W':
+                    return new DataWrapper(new int[]{x, y}, Heading.WEST);
+                case 'E':
+                    return new DataWrapper(new int[]{x, y}, Heading.EAST);
+                default:
+                    System.out.println("Try again, heading is incorrect.");
+                    break;
             }
         }
-        return new DataWrapper(new int[]{x, y}, h);
     }
 
-    public char[] inputSimulationSequence() {
-        char[] inputAsChars;
+    /**
+     * Reads the console for input for the simulation sequence. Loops until valid input is received.
+     *
+     * @return - An array of the steps.
+     */
+    public Move[] inputSimulationSequence() {
+        Move[] simulationSequence;
         while (true) {
-            boolean wrongInput = true;
+            boolean validInput = true;
             String inputConsoleString = scanInput.nextLine();
-            inputAsChars = inputConsoleString.toCharArray();
-            for (char c : inputAsChars) {
-                if (c != 'F' && c != 'B' && c != 'L' && c != 'R') {
-                    System.out.println("Try again, unknown commands. ");
-                    wrongInput = false;
-                    break;
+            char[] inputAsChars = inputConsoleString.toCharArray();
+            simulationSequence = new Move[inputConsoleString.length()];
+
+            label:
+            for (int i = 0; i < inputAsChars.length; i++) {
+                switch (inputAsChars[i]) {
+                    case 'F':
+                        simulationSequence[i] = Move.FORWARD;
+                        break;
+                    case 'B':
+                        simulationSequence[i] = Move.BACKWARD;
+                        break;
+                    case 'L':
+                        simulationSequence[i] = Move.ROTATE_LEFT;
+                        break;
+                    case 'R':
+                        simulationSequence[i] = Move.ROTATE_RIGHT;
+                        break;
+                    default:
+                        System.out.println("Try again, unknown commands. ");
+                        validInput = false;
+                        break label;
                 }
             }
-            if (wrongInput) {
+            if (validInput) {
                 break;
             }
         }
-        return inputAsChars;
+        return simulationSequence;
     }
 }

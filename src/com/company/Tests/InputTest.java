@@ -1,6 +1,8 @@
 package com.company.Tests;
 
-import com.company.Utilities.DataWrapper;
+import com.company.Shared.DataWrapper;
+import com.company.Shared.Heading;
+import com.company.Shared.Move;
 import com.company.Utilities.Input;
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +14,14 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests for the input class.
+ * Methods that test for invalid input has to swallow NoSuchElementException because the method
+ * is waiting for more input. In real usage, this error won't occur and thus can be ignored here.
+ */
 class InputTest {
     @Test
-    void inputTwoNumbersValidInput1() {
+    void inputBoardSizeValid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -24,13 +31,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        int[] actual = input.inputTwoNumbersBoard();
+        int[] actual = input.inputBoardSize();
         int[] expected = new int[]{1, 1};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputTwoNumbersValidInput2() {
+    void inputBoardSizeValid2() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -40,13 +47,29 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        int[] actual = input.inputTwoNumbersBoard();
+        int[] actual = input.inputBoardSize();
         int[] expected = new int[]{100, 100};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputTwoNumbersValidInput3() {
+    void inputBoardSizeValid3() {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(byteArrayOutputStream);
+        System.setOut(printStream);
+
+        String consoleInput = "2147483646 2147483646";
+        System.setIn(new ByteArrayInputStream(consoleInput.getBytes()));
+        System.setIn(System.in);
+
+        Input input = new Input();
+        int[] actual = input.inputBoardSize();
+        int[] expected = new int[]{2147483646, 2147483646};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void inputBoardSizeValid4() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -56,13 +79,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        int[] actual = input.inputTwoNumbersBoard();
+        int[] actual = input.inputBoardSize();
         int[] expected = new int[]{2147483647, 2147483647};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputTwoNumbersValidInput4() {
+    void inputBoardSizeValid5() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -72,13 +95,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        int[] actual = input.inputTwoNumbersBoard();
+        int[] actual = input.inputBoardSize();
         int[] expected = new int[]{100, 100};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputTwoNumbersInvalidInput1() {
+    void inputBoardSizeInvalid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -89,7 +112,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -100,7 +123,73 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersInvalidInput2() {
+    void inputBoardSizeInvalid2() {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(byteArrayOutputStream);
+        System.setOut(printStream);
+
+        String consoleInput = "0 0";
+        System.setIn(new ByteArrayInputStream(consoleInput.getBytes()));
+        System.setIn(System.in);
+
+        Input input = new Input();
+        try {
+            input.inputBoardSize();
+        } catch (NoSuchElementException e) {
+        }
+
+        String actual = byteArrayOutputStream.toString().trim();
+        String expected = "Try again, number is to small.";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void inputBoardSizeInvalid3() {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(byteArrayOutputStream);
+        System.setOut(printStream);
+
+        String consoleInput = "10 0";
+        System.setIn(new ByteArrayInputStream(consoleInput.getBytes()));
+        System.setIn(System.in);
+
+        Input input = new Input();
+        try {
+            input.inputBoardSize();
+        } catch (NoSuchElementException e) {
+        }
+
+        String actual = byteArrayOutputStream.toString().trim();
+        String expected = "Try again, number is to small.";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void inputBoardSizeInvalid4() {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(byteArrayOutputStream);
+        System.setOut(printStream);
+
+        String consoleInput = "0 10";
+        System.setIn(new ByteArrayInputStream(consoleInput.getBytes()));
+        System.setIn(System.in);
+
+        Input input = new Input();
+        try {
+            input.inputBoardSize();
+        } catch (NoSuchElementException e) {
+        }
+
+        String actual = byteArrayOutputStream.toString().trim();
+        String expected = "Try again, number is to small.";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void inputBoardSizeInvalid5() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -111,7 +200,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -122,7 +211,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersInvalidInput3() {
+    void inputBoardSizeInvalid6() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -133,7 +222,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -144,7 +233,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersInvalidInput4() {
+    void inputBoardSizeInvalid7() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -155,7 +244,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -166,7 +255,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersInvalidInput5() {
+    void inputBoardSizeInvalid8() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -177,7 +266,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -188,7 +277,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersInvalidInput6() {
+    void inputBoardSizeInvalid9() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -199,7 +288,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -210,7 +299,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersInvalidInput7() {
+    void inputBoardSizeInvalid10() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -221,7 +310,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -232,7 +321,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersInvalidInput8() {
+    void inputBoardSizeInvalid11() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -243,7 +332,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoard();
+            input.inputBoardSize();
         } catch (NoSuchElementException e) {
         }
 
@@ -254,7 +343,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingValid1() {
+    void inputStartPositionValid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -264,15 +353,15 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        DataWrapper dw = input.inputTwoNumbersBoardAndHeading();
+        DataWrapper dw = input.inputStartPosition();
 
         int[] expected = new int[]{0, 0};
         assertArrayEquals(expected, dw.coordinates);
-        assertEquals('N', dw.heading);
+        assertEquals(Heading.NORTH, dw.heading);
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingValid2() {
+    void inputStartPositionValid2() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -282,15 +371,15 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        DataWrapper dw = input.inputTwoNumbersBoardAndHeading();
+        DataWrapper dw = input.inputStartPosition();
 
         int[] expected = new int[]{0, 0};
         assertArrayEquals(expected, dw.coordinates);
-        assertEquals('S', dw.heading);
+        assertEquals(Heading.SOUTH, dw.heading);
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingValid3() {
+    void inputStartPositionValid3() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -300,15 +389,33 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        DataWrapper dw = input.inputTwoNumbersBoardAndHeading();
+        DataWrapper dw = input.inputStartPosition();
 
         int[] expected = new int[]{0, 0};
         assertArrayEquals(expected, dw.coordinates);
-        assertEquals('W', dw.heading);
+        assertEquals(Heading.WEST, dw.heading);
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingValid4() {
+    void inputStartPositionValid4() {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(byteArrayOutputStream);
+        System.setOut(printStream);
+
+        String consoleInput = "0001 00 W";
+        System.setIn(new ByteArrayInputStream(consoleInput.getBytes()));
+        System.setIn(System.in);
+
+        Input input = new Input();
+        DataWrapper dw = input.inputStartPosition();
+
+        int[] expected = new int[]{1, 0};
+        assertArrayEquals(expected, dw.coordinates);
+        assertEquals(Heading.WEST, dw.heading);
+    }
+
+    @Test
+    void inputStartPositionValid5() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -318,15 +425,15 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        DataWrapper dw = input.inputTwoNumbersBoardAndHeading();
+        DataWrapper dw = input.inputStartPosition();
 
-        int[] expected = new int[]{100, 000};
+        int[] expected = new int[]{100, 100};
         assertArrayEquals(expected, dw.coordinates);
-        assertEquals('W', dw.heading);
+        assertEquals(Heading.NORTH, dw.heading);
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingValid5() {
+    void inputStartPositionValid6() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -336,15 +443,15 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        DataWrapper dw = input.inputTwoNumbersBoardAndHeading();
+        DataWrapper dw = input.inputStartPosition();
 
         int[] expected = new int[]{2147483647, 2147483647};
         assertArrayEquals(expected, dw.coordinates);
-        assertEquals('E', dw.heading);
+        assertEquals(Heading.EAST, dw.heading);
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingInvalid1() {
+    void inputStartPositionInvalid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -355,7 +462,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoardAndHeading();
+            input.inputStartPosition();
         } catch (NoSuchElementException e) {
         }
 
@@ -366,7 +473,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingInvalid2() {
+    void inputStartPositionInvalid2() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -377,7 +484,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoardAndHeading();
+            input.inputStartPosition();
         } catch (NoSuchElementException e) {
         }
 
@@ -388,7 +495,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingInvalid3() {
+    void inputStartPositionInvalid3() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -399,7 +506,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoardAndHeading();
+            input.inputStartPosition();
         } catch (NoSuchElementException e) {
         }
 
@@ -410,7 +517,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingInvalid4() {
+    void inputStartPositionInvalid4() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -421,7 +528,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoardAndHeading();
+            input.inputStartPosition();
         } catch (NoSuchElementException e) {
         }
 
@@ -432,7 +539,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingInvalid5() {
+    void inputStartPositionInvalid5() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -443,7 +550,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoardAndHeading();
+            input.inputStartPosition();
         } catch (NoSuchElementException e) {
         }
 
@@ -454,7 +561,7 @@ class InputTest {
     }
 
     @Test
-    void inputTwoNumbersBoardAndHeadingInvalid6() {
+    void inputStartPositionInvalid7() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -465,7 +572,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputTwoNumbersBoardAndHeading();
+            input.inputStartPosition();
         } catch (NoSuchElementException e) {
         }
 
@@ -475,10 +582,8 @@ class InputTest {
         assertEquals(expected, actual);
     }
 
-    //TODO Write more tests.
-
     @Test
-    void inputSimulationSequenceValidInput1() {
+    void inputSimulationSequenceValid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -488,13 +593,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        char[] actual = input.inputSimulationSequence();
-        char[] expected = new char[]{'F'};
+        Move[] actual = input.inputSimulationSequence();
+        Move[] expected = new Move[]{Move.FORWARD};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValidInput2() {
+    void inputSimulationSequenceValid2() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -504,13 +609,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        char[] actual = input.inputSimulationSequence();
-        char[] expected = new char[]{'B'};
+        Move[] actual = input.inputSimulationSequence();
+        Move[] expected = new Move[]{Move.BACKWARD};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValidInput3() {
+    void inputSimulationSequenceValid3() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -520,13 +625,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        char[] actual = input.inputSimulationSequence();
-        char[] expected = new char[]{'L'};
+        Move[] actual = input.inputSimulationSequence();
+        Move[] expected = new Move[]{Move.ROTATE_LEFT};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValidInput4() {
+    void inputSimulationSequenceValid4() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -536,13 +641,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        char[] actual = input.inputSimulationSequence();
-        char[] expected = new char[]{'R'};
+        Move[] actual = input.inputSimulationSequence();
+        Move[] expected = new Move[]{Move.ROTATE_RIGHT};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValidInput5() {
+    void inputSimulationSequenceValid5() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -552,13 +657,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        char[] actual = input.inputSimulationSequence();
-        char[] expected = new char[]{'F', 'B', 'L', 'R'};
+        Move[] actual = input.inputSimulationSequence();
+        Move[] expected = new Move[]{Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.ROTATE_RIGHT};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValidInput6() {
+    void inputSimulationSequenceValid6() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -568,13 +673,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        char[] actual = input.inputSimulationSequence();
-        char[] expected = new char[]{'F', 'B', 'L', 'R', 'F', 'F', 'F', 'B', 'B', 'B', 'L', 'L', 'L', 'R', 'R', 'R', 'F', 'F'};
+        Move[] actual = input.inputSimulationSequence();
+        Move[] expected = new Move[]{Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.ROTATE_RIGHT, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.BACKWARD, Move.BACKWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.ROTATE_LEFT, Move.ROTATE_LEFT, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT, Move.FORWARD, Move.FORWARD};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceInvalidInput1() {
+    void inputSimulationSequenceInvalid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -596,7 +701,7 @@ class InputTest {
     }
 
     @Test
-    void inputSimulationSequenceInvalidInput2() {
+    void inputSimulationSequenceInvalid2() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);

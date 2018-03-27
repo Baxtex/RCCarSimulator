@@ -1,59 +1,72 @@
 package com.company.Controllers;
 
 import com.company.Logic.Simulation;
-import com.company.Models.SimulationModel;
+import com.company.Models.CarSimulationModel;
+import com.company.Shared.DataWrapper;
 import com.company.Utilities.Input;
-import com.company.Utilities.DataWrapper;
-import com.company.Views.View;
+import com.company.Views.CarSimulationView;
 
+/**
+ * Controller that acts between the view and the model.
+ */
 public class Controller {
 
-    private final View view;
+    private final CarSimulationView carSimulationView;
+    private CarSimulationModel carSimulationModel;
     private final Input input = new Input();
-    private final SimulationModel simulationModel;
 
     /**
-     * Constructor that setups objects.
+     * Constructor for Controller.
+     *
+     * @param carSimulationView - View for the Model.
      */
-    public Controller(View view, SimulationModel simulationModel) {
-        this.view = view;
-        this.simulationModel = simulationModel;
+    public Controller(CarSimulationView carSimulationView) {
+        this.carSimulationView = carSimulationView;
     }
 
+    /**
+     * Infinite loop keeps the game running until force closed.
+     */
     public void start() {
-        getInput();
-        updateView();
-        Simulation simulation = new Simulation(simulationModel);
-        simulation.run();
-        if (simulationModel.isSuccessful()) {
-            updateSuccessfulView();
-        } else {
-            updateErrorView();
+        while (true) {
+            carSimulationModel = new CarSimulationModel();
+            setupModel();
+            Simulation simulation = new Simulation();
+            simulation.run(carSimulationModel);
+            if (carSimulationModel.isSuccessful()) {
+                updateSuccessfulView();
+            } else {
+                updateErrorView();
+            }
         }
     }
 
-    private void getInput() {
-        System.out.println("Welcome to the RCCarSimulator! Please enter size as rows and columns:");
-        simulationModel.setBoardSize(input.inputTwoNumbersBoard());
-        System.out.println("Enter the starting coordinates and startHeading, choose from N, S, W or E");
-        //simulationModel.setCoordinates(input.inputTwoNumbersBoard());
-        DataWrapper sd = input.inputTwoNumbersBoardAndHeading();
-        simulationModel.setCoordinates(sd.coordinates);
-        simulationModel.setHeading(sd.heading);
-        System.out.println("Enter the sequence to simulate, choose multiple from F, B, L or R");
-        simulationModel.setSimulationSequence(input.inputSimulationSequence());
-        System.out.println("Thanks for your configuration, starting simulation...\n");
+    /**
+     * Takes input from the console and setup the model with it.
+     */
+    private void setupModel() {
+        System.out.println("Please enter size as rows and columns:");
+        carSimulationModel.setBoardSize(input.inputBoardSize());
+        System.out.println("Enter the starting coordinates and start Heading, choose from N, S, W or E");
+        DataWrapper dw = input.inputStartPosition();
+        carSimulationModel.setCoordinates(dw.coordinates);
+        carSimulationModel.setHeading(dw.heading);
+        System.out.println("Enter the sequence of steps to simulate, choose one or more from F, B, L or R");
+        carSimulationModel.setMoveSequence(input.inputSimulationSequence());
+        System.out.println("Thanks for your configuration, these are your settings:");
+        updateView();
+        System.out.println("Starting simulation now...\n");
     }
 
     private void updateView() {
-        view.printCarDetails(simulationModel.getBoardSize(), simulationModel.getCoordinates(), simulationModel.getHeading(), simulationModel.getSimulationSequence());
+        carSimulationView.printCarDetails(carSimulationModel.getBoardSize(), carSimulationModel.getCoordinates(), carSimulationModel.getHeading(), carSimulationModel.getMoveSequence());
     }
 
     private void updateSuccessfulView() {
-        view.printSuccessful(simulationModel.getCoordinates(), simulationModel.getHeading());
+        carSimulationView.printSuccessful(carSimulationModel.getCoordinates(), carSimulationModel.getHeading());
     }
 
     private void updateErrorView() {
-        view.printError(simulationModel.getLastMoveInfo());
+        carSimulationView.printError(carSimulationModel.getLastMove());
     }
 }
