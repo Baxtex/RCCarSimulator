@@ -52,7 +52,7 @@ public class Controller {
         carSimulationModel.setCoordinates(dw.coordinates);
         carSimulationModel.setHeading(dw.heading);
         System.out.println("Enter the sequence of steps to simulate, choose one or more from F, B, L or R");
-        carSimulationModel.setMoveSequence(input.inputSimulationSequence());
+        carSimulationModel.setMoveSequence(input.inputStepSequence());
         System.out.println("Thanks for your configuration, these are your settings:");
         updateView();
         System.out.println("Starting simulation now...\n");

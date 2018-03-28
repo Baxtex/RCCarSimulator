@@ -93,39 +93,43 @@ public class Input {
      *
      * @return - An array of the steps.
      */
-    public Move[] inputSimulationSequence() {
-        Move[] simulationSequence;
+    public Move[] inputStepSequence() {
+        Move[] stepSequence;
         while (true) {
             boolean validInput = true;
             String inputConsoleString = scanInput.nextLine();
+            if(inputConsoleString.length()<1){
+                System.out.println("Try again, can't be less than 1");
+                continue;
+            }
             char[] inputAsChars = inputConsoleString.toCharArray();
-            simulationSequence = new Move[inputConsoleString.length()];
+            stepSequence = new Move[inputConsoleString.length()];
 
-            label:
             for (int i = 0; i < inputAsChars.length; i++) {
                 switch (inputAsChars[i]) {
                     case 'F':
-                        simulationSequence[i] = Move.FORWARD;
+                        stepSequence[i] = Move.FORWARD;
                         break;
                     case 'B':
-                        simulationSequence[i] = Move.BACKWARD;
+                        stepSequence[i] = Move.BACKWARD;
                         break;
                     case 'L':
-                        simulationSequence[i] = Move.ROTATE_LEFT;
+                        stepSequence[i] = Move.ROTATE_LEFT;
                         break;
                     case 'R':
-                        simulationSequence[i] = Move.ROTATE_RIGHT;
+                        stepSequence[i] = Move.ROTATE_RIGHT;
                         break;
                     default:
                         System.out.println("Try again, unknown commands. ");
+                        i = inputAsChars.length;
                         validInput = false;
-                        break label;
+                        break;
                 }
             }
             if (validInput) {
                 break;
             }
         }
-        return simulationSequence;
+        return stepSequence;
     }
 }

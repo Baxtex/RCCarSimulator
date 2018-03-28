@@ -583,7 +583,7 @@ class InputTest {
     }
 
     @Test
-    void inputSimulationSequenceValid1() {
+    void inputStepSequenceValid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -593,13 +593,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        Move[] actual = input.inputSimulationSequence();
+        Move[] actual = input.inputStepSequence();
         Move[] expected = new Move[]{Move.FORWARD};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValid2() {
+    void inputStepSequenceValid2() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -609,13 +609,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        Move[] actual = input.inputSimulationSequence();
+        Move[] actual = input.inputStepSequence();
         Move[] expected = new Move[]{Move.BACKWARD};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValid3() {
+    void inputStepSequenceValid3() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -625,13 +625,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        Move[] actual = input.inputSimulationSequence();
+        Move[] actual = input.inputStepSequence();
         Move[] expected = new Move[]{Move.ROTATE_LEFT};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValid4() {
+    void inputStepSequenceValid4() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -641,13 +641,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        Move[] actual = input.inputSimulationSequence();
+        Move[] actual = input.inputStepSequence();
         Move[] expected = new Move[]{Move.ROTATE_RIGHT};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValid5() {
+    void inputStepSequenceValid5() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -657,13 +657,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        Move[] actual = input.inputSimulationSequence();
+        Move[] actual = input.inputStepSequence();
         Move[] expected = new Move[]{Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.ROTATE_RIGHT};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceValid6() {
+    void inputStepSequenceValid6() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -673,13 +673,13 @@ class InputTest {
         System.setIn(System.in);
 
         Input input = new Input();
-        Move[] actual = input.inputSimulationSequence();
+        Move[] actual = input.inputStepSequence();
         Move[] expected = new Move[]{Move.FORWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.ROTATE_RIGHT, Move.FORWARD, Move.FORWARD, Move.FORWARD, Move.BACKWARD, Move.BACKWARD, Move.BACKWARD, Move.ROTATE_LEFT, Move.ROTATE_LEFT, Move.ROTATE_LEFT, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT, Move.ROTATE_RIGHT, Move.FORWARD, Move.FORWARD};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void inputSimulationSequenceInvalid1() {
+    void inputStepSequenceInvalid1() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -690,7 +690,7 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputSimulationSequence();
+            input.inputStepSequence();
         } catch (NoSuchElementException e) {
         }
 
@@ -701,7 +701,7 @@ class InputTest {
     }
 
     @Test
-    void inputSimulationSequenceInvalid2() {
+    void inputStepSequenceInvalid2() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         System.setOut(printStream);
@@ -712,12 +712,34 @@ class InputTest {
 
         Input input = new Input();
         try {
-            input.inputSimulationSequence();
+            input.inputStepSequence();
         } catch (NoSuchElementException e) {
         }
 
         String actual = byteArrayOutputStream.toString().trim();
         String expected = "Try again, unknown commands.";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void inputStepSequenceInvalid3() {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(byteArrayOutputStream);
+        System.setOut(printStream);
+
+        String consoleInput = "\n";
+        System.setIn(new ByteArrayInputStream(consoleInput.getBytes()));
+        System.setIn(System.in);
+
+        Input input = new Input();
+        try {
+            input.inputStepSequence();
+        } catch (NoSuchElementException e) {
+        }
+
+        String actual = byteArrayOutputStream.toString().trim();
+        String expected = "Try again, can't be less than 1";
 
         assertEquals(expected, actual);
     }
